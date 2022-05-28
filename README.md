@@ -1,5 +1,21 @@
 # microservices-test
 
+###TODO
+ドキュメントを日本語に直して，詳しく説明を入れる．
+## テストの方法
+```bash
+#1. まずビルドを行う．
+sam build
+#2. ポートの解放をして，webブラウザなどから呼び出せるようにする．
+sam local start-api
+```
+これによりコンテナがローカルの3000番ポートで立ち上がるので以下のように実行したい関数を呼び出すことができる．
+```bash
+http://localhost:3000/login
+http://localhost:3000/hello
+```
+
+
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - hello_world - Code for the application's Lambda function and Project Dockerfile.
@@ -111,12 +127,3 @@ aws cloudformation delete-stack --stack-name microservices-test
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
 Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
-
-
-
-## Test Rocally
-```bash
-docker build -t hello-world .
-
-docker run -p 9000:8080 hello-world
-```
