@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  firstfunc:
+    container_name: hello_world
+    build: hello_world/.
+    ports:
+      - "9000:8080"
+  loginfuc:
+    container_name: login_function
+    build: login_function/.
+    ports:
+      - "9001:8080"
