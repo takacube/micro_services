@@ -15,15 +15,14 @@ http://localhost:3000/login
 http://localhost:3000/hello
 ```
 
+- events - テストで関数を呼び出すときに必要なパラメータをモックとして定義しています．
+- tests - ユニットテストを実行するディレクトリ群です．
+- template.yaml - このアプリケーションのAWSリソースの定義場所です.
 
-This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
+AWSリソースの定義は全てtemplate.yamlファイル内で行われています．このプロジェクトでは
+template.yamlでlambda, apigateway, policyなどを定義しています．
 
-- hello_world - Code for the application's Lambda function and Project Dockerfile.
-- events - Invocation events that you can use to invoke the function.
-- tests - Unit tests for the application code. 
-- template.yaml - A template that defines the application's AWS resources.
-
-The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
+(The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.)
 
 ## Deploy the sample application
 
@@ -34,10 +33,9 @@ To use the SAM CLI, you need the following tools.
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
-You may need the following for local testing.
-* [Python 3 installed](https://www.python.org/downloads/)
 
-To build and deploy your application for the first time, run the following in your shell:
+初めにデプロイする場合，もしくはtemplate.yamlの編集などをした後に実行するコマンド
+(To build and deploy your application for the first time, run the following in your shell:)
 
 ```bash
 sam build
